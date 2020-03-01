@@ -2,6 +2,7 @@ import Head from "next/head";
 import styled from "styled-components";
 import reset from "styled-reset";
 import { createGlobalStyle } from "styled-components";
+import Header from "./Header";
 
 const GlobalStyle = createGlobalStyle`
   ${reset};
@@ -9,6 +10,7 @@ const GlobalStyle = createGlobalStyle`
   body {
     font-family: "Lato";
     min-height: 100vh;
+    padding: 64px;
     background-image: linear-gradient(
       to right bottom,
       #191e24,
@@ -30,6 +32,7 @@ const Layout = props => (
         rel="stylesheet"
       />
     </Head>
+    <Header />
     {props.children}
   </Container>
 );
