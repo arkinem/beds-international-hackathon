@@ -1,28 +1,36 @@
 import styled from "styled-components";
 import Countdown from "react-countdown";
+import LabeledNumber from "./LabeledNumber";
 
-// Renderer callback with condition
 const renderer = ({ days, hours, minutes, seconds, completed }) => {
   return (
-    <>
-      {days} : {hours} : {minutes} : {seconds}
-    </>
+    <Container>
+      <LabeledNumber label={"days"} number={days} />
+      <Separator children=":" />
+      <LabeledNumber label={"hours"} number={hours} />
+      <Separator children=":" />
+      <LabeledNumber label={"mins"} number={minutes} />
+      <Separator children=":" />
+      <LabeledNumber label={"secs"} number={seconds} />
+    </Container>
   );
 };
 
 const hackathonDate = "2020-04-15T10:00:00Z";
 
-const Timer = props => (
-  <Container>
-    <Countdown date={Date.parse(hackathonDate)} renderer={renderer} />
-  </Container>
+export default () => (
+  <Countdown date={Date.parse(hackathonDate)} renderer={renderer} />
 );
-
-export default Timer;
 
 const Container = styled.div`
   position: relative;
-  color: white;
-  font-weight: 700;
-  font-size: 48px;
+  width: 550px;
+  display: flex;
+  align-items: center;
+`;
+
+const Separator = styled.span`
+  font-weight: 400;
+  font-size: 64px;
+  margin: -20px 26px 0 26px;
 `;

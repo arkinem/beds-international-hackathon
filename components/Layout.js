@@ -9,6 +9,7 @@ const GlobalStyle = createGlobalStyle`
   
   body {
     font-family: "Ubuntu";
+    color: white;
     min-height: 100vh;
     padding: 64px;
     background-image: linear-gradient(
