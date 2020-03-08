@@ -8,7 +8,7 @@ const GlobalStyle = createGlobalStyle`
   ${reset};
   
   body {
-    font-family: "Lato";
+    font-family: "Ubuntu";
     min-height: 100vh;
     padding: 64px;
     background-image: linear-gradient(
@@ -28,7 +28,7 @@ const Layout = props => (
     <Head>
       <title>Hackathon</title>
       <link
-        href="https://fonts.googleapis.com/css?family=Lato&display=swap"
+        href="https://fonts.googleapis.com/css?family=Ubuntu:400,400i,500,700&display=swap"
         rel="stylesheet"
       />
     </Head>
