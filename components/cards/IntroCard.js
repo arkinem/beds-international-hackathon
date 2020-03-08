@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import Timer from "../general/Timer";
 import { device } from "../../helpers/devices";
+import colors from "../../helpers/colors";
 
 const IntroCard = props => (
   <Container>
@@ -33,8 +34,6 @@ const Container = styled.div`
 
 const TitleContainer = styled.div`
   position: relative;
-  /* flex-basis: 60%; */
-  /* background: orange; */
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -44,9 +43,7 @@ const PhotoContainer = styled.div`
   position: relative;
   display: flex;
   align-items: center;
-  /* flex-basis: 40%; */
   width: 660px;
-  /* background: green; */
 `;
 
 const Rectangle = styled.div`
@@ -58,15 +55,12 @@ const Rectangle = styled.div`
   left: 0;
   width: 592px;
   height: 392px;
-  border: 4px solid deeppink;
+  border: 4px solid ${colors.red};
 `;
 
 const IntroPhoto = styled.img`
-  /* margin-top: 40px;
-  margin-left: 40px; */
   width: 600px;
   transform: translate(40px, 40px);
-  /* padding-top: 60%; */
 `;
 
 const Title = styled.h1`
