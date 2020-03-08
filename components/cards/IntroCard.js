@@ -1,24 +1,12 @@
 import styled from "styled-components";
-import Countdown from "react-countdown";
-
-// Renderer callback with condition
-const renderer = ({ days, hours, minutes, seconds, completed }) => {
-  return (
-    <>
-      {days} : {hours} : {minutes} : {seconds}
-    </>
-  );
-};
-
-const hackathonDate = "2020-04-15T10:00:00Z";
+import Timer from "../general/Timer";
+import { device } from "../../helpers/devices";
 
 const IntroCard = props => (
   <Container>
     <TitleContainer>
       <Title>Inter University Hackathon 2020</Title>
-      <CountdownContainer>
-        <Countdown date={Date.parse(hackathonDate)} renderer={renderer} />
-      </CountdownContainer>
+      <Timer />
     </TitleContainer>
     <PhotoContainer>
       <Rectangle />
@@ -31,10 +19,16 @@ export default IntroCard;
 
 const Container = styled.div`
   position: relative;
-  height: 600px;
   display: flex;
-  flex-direction: row;
-  justify-content: space-between;
+  flex-direction: column;
+  align-items: center;
+
+  @media ${device.laptop} {
+    justify-content: space-between;
+    max-width: 1400px;
+    height: 600px;
+    flex-direction: row;
+  }
 `;
 
 const TitleContainer = styled.div`
@@ -44,13 +38,6 @@ const TitleContainer = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
-`;
-
-const CountdownContainer = styled.div`
-  position: relative;
-  color: white;
-  font-weight: 700;
-  font-size: 48px;
 `;
 
 const PhotoContainer = styled.div`
@@ -85,9 +72,9 @@ const IntroPhoto = styled.img`
 const Title = styled.h1`
   color: white;
   font-weight: 700;
-  font-size: 48px;
-  line-height: 56px;
+  font-size: 64px;
+  line-height: 86px;
   letter-spacing: 1px;
-  max-width: 500px;
+  max-width: 550px;
   margin-bottom: 80px;
 `;
