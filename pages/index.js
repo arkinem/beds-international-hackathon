@@ -1,8 +1,8 @@
-import Layout from "../components/Layout";
 import styled from "styled-components";
-import IntroCard from "../components/cards/IntroCard";
-import ScheduleCard from "../components/cards/ScheduleCard";
-import AboutCard from "../components/cards/AboutCard";
+import Layout from "../components/general/Layout";
+import IntroCard from "../components/Intro/IntroCard";
+import ScheduleCard from "../components/Schedule/ScheduleCard";
+import AboutCard from "../components/About/AboutCard";
 
 export default function Index() {
   return (

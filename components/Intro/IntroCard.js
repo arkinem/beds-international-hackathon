@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import Timer from "../general/Timer";
+import Timer from "./Timer";
 import { device } from "../../helpers/devices";
 import colors from "../../helpers/colors";
 
