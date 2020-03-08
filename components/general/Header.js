@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import BcsLogo from "./icons/BcsLogo";
+import BcsLogo from "../icons/BcsLogo";
 
 const Header = props => (
   <Container>
