@@ -1,8 +1,13 @@
 import styled from "styled-components";
+import InfoBox from "./InfoBox";
+import colors from "../../helpers/colors";
 
 const AboutCard = props => (
   <Container>
-    <PhotoContainer>photo</PhotoContainer>
+    <PhotoContainer>
+      <FirstPhoto />
+      <SecondPhoto />
+    </PhotoContainer>
     <InfoContainer>
       <Title>About event</Title>
       <Text>
@@ -13,6 +18,10 @@ const AboutCard = props => (
         molestie orci eros at ante. Proin iaculis sed lectus nec malesuada.
       </Text>
       <Subtitle>University of Bedfordshire </Subtitle>
+      <BoxContainer>
+        <InfoBox value={"2"} label={"Days event"} />
+        <InfoBox value={"10+"} label={"Countries"} />
+      </BoxContainer>
     </InfoContainer>
   </Container>
 );
@@ -26,13 +35,14 @@ const Container = styled.div`
 const PhotoContainer = styled.div`
   flex: 1;
   height: 700px;
-  background: teal;
+  position: relative;
+  /* background: teal; */
 `;
 
 const InfoContainer = styled.div`
   flex: 1;
   height: 700px;
-  background: orange;
+  /* background: orange; */
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -52,4 +62,29 @@ const Text = styled.p`
 const Subtitle = styled.h1`
   font-size: 24px;
   margin-bottom: 16px;
+`;
+
+const BoxContainer = styled.div`
+  display: flex;
+  flex-direction: row;
+`;
+
+const FirstPhoto = styled.div`
+  position: absolute;
+  height: 250px;
+  width: 300px;
+  margin: auto;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  border: 3px solid ${colors.red};
+  transform: translate(80px, 120px);
+`;
+
+const SecondPhoto = styled(FirstPhoto)`
+  height: 400px;
+  width: 280px;
+  border: 3px solid teal;
+  transform: translate(-40px, -30px);
 `;
