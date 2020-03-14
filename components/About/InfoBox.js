@@ -1,55 +1,32 @@
 import styled from "styled-components";
+import colors from "../../helpers/colors";
 
-const AboutCard = props => (
+const InfoBox = ({ value, label }) => (
   <Container>
-    <PhotoContainer>photo</PhotoContainer>
-    <InfoContainer>
-      <Title>About event</Title>
-      <Text>
-        orem ipsum dolor sit amet, consectetur adipiscing elit. Integer vel
-        gravida nunc, id semper diam. Aenean at lorem metus. Donec tempor
-        bibendum turpis non aliquam. Curabitur non lacinia tellus. Curabitur
-        varius, enim ut ullamcorper consequat, nisl sapien imperdiet ex, et
-        molestie orci eros at ante. Proin iaculis sed lectus nec malesuada.
-      </Text>
-      <Subtitle>University of Bedfordshire </Subtitle>
-    </InfoContainer>
+    <Value>{value}</Value>
+    <Label>{label}</Label>
   </Container>
 );
 
-export default AboutCard;
+export default InfoBox;
 
 const Container = styled.div`
   display: flex;
-`;
-
-const PhotoContainer = styled.div`
-  flex: 1;
-  height: 700px;
-  background: teal;
-`;
-
-const InfoContainer = styled.div`
-  flex: 1;
-  height: 700px;
-  background: orange;
-  display: flex;
   flex-direction: column;
+  align-items: center;
   justify-content: center;
+  width: 150px;
+  height: 120px;
+  background-color: ${colors.blueGrey};
+  margin-right: 40px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
 `;
 
-const Title = styled.h1`
-  font-size: 48px;
-  margin-bottom: 16px;
+const Value = styled.div`
+  font-size: 42px;
+  padding: 6px;
 `;
 
-const Text = styled.p`
-  font-size: 16px;
-  max-width: 420px;
-  margin-bottom: 32px;
-`;
-
-const Subtitle = styled.h1`
-  font-size: 24px;
-  margin-bottom: 16px;
+const Label = styled.div`
+  font-size: 14px;
 `;
