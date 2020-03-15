@@ -20,7 +20,7 @@ export default function AppRouter() {
 
         <ul>
           <li>
-            <Link to="/public">Public Page</Link>
+            <Link to="/">Public Page</Link>
           </li>
           <li>
             <Link to="/protected">Protected Page</Link>
@@ -28,7 +28,7 @@ export default function AppRouter() {
         </ul>
 
         <Switch>
-          <Route path="/public">
+          <Route path="/" exact>
             <LandingPage />
           </Route>
           <Route path="/login">
