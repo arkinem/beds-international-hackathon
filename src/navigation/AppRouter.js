@@ -11,12 +11,10 @@ import LoginPage from "../pages/LoginPage";
 import LandingPage from "../pages/LandingPage";
 import DashboadPage from "../pages/DashboardPage";
 import authentication from "../helpers/authentication";
-import Background from "../components/Background";
 
 export default function AppRouter() {
   return (
     <Router>
-      <Background />
       <div>
         <AuthButton />
 
