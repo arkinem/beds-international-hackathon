@@ -3,12 +3,10 @@ import ReactDOM from "react-dom";
 import * as serviceWorker from "./serviceWorker";
 import AppRouter from "./navigation/AppRouter";
 import { GlobalStyle } from "./helpers/style";
-import Background from "./components/Background";
 
 const app = (
   <>
     <GlobalStyle />
-    <Background />
     <AppRouter />
   </>
 );
