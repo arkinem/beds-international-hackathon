@@ -16,13 +16,17 @@ const Header = (props) => {
         <BcsLogo />
         <BcsName>STUDENT CHAPTER</BcsName>
       </BcsContainer>
-      {
-        !isAuthenticated ? (
-          <Button onClick={() => history.push("/dashboard")}>Sign up</Button>
-        ) : (
-          ""
-        ) //  location.pathname === paths.login ?
-      }
+      {!isAuthenticated ? (
+        <Button onClick={() => history.push(paths.dashboard)}>Sign up</Button>
+      ) : (
+        <Button
+          onClick={() => {
+            authentication.signout(() => history.push("/"));
+          }}
+        >
+          Sign out
+        </Button>
+      )}
     </Container>
   );
 };
