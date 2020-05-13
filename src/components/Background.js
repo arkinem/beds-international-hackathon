@@ -10,15 +10,15 @@ export default () => (
           value: 8,
           density: {
             enable: true,
-            value_area: 800
-          }
+            value_area: 800,
+          },
         },
         line_linked: {
-          enable: false
+          enable: false,
         },
         move: {
           speed: 1,
-          out_mode: "out"
+          out_mode: "out",
         },
         shape: {
           type: ["images"],
@@ -26,35 +26,35 @@ export default () => (
             {
               src: "/assets/images/circle.png",
               height: 50,
-              width: 53
+              width: 53,
             },
             {
               src: "/assets/images/square.png",
               height: 50,
-              width: 53
+              width: 53,
             },
             {
               src: "/assets/images/triangle.png",
               height: 50,
-              width: 53
-            }
-          ]
+              width: 53,
+            },
+          ],
         },
         color: {
-          value: "#CCC"
+          value: "#CCC",
         },
         size: {
-          value: 30,
+          value: 15,
           random: false,
           anim: {
             enable: true,
             speed: 4,
             size_min: 10,
-            sync: false
-          }
-        }
+            sync: false,
+          },
+        },
       },
-      retina_detect: false
+      retina_detect: false,
     }}
   />
 );

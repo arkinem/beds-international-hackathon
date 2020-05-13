@@ -5,19 +5,23 @@ import Header from "./Header";
 
 const PageContainer = ({ children }) => {
   return (
-    <>
+    <Container>
       <Background />
 
-      <Container>
+      <Content>
         <Header />
         {children}
-      </Container>
-    </>
+      </Content>
+    </Container>
   );
 };
 
 export default PageContainer;
 
 const Container = styled.div`
+  position: relative;
+`;
+
+const Content = styled.div`
   padding: 64px;
 `;

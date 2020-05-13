@@ -5,7 +5,7 @@ export const GlobalStyle = createGlobalStyle`
   ${reset}
   body {
     color: white !important;
-    font-family: Capriola !important;
+    font-family: Ubuntu !important;
   }
 `;
 
