@@ -11,12 +11,13 @@ import LoginPage from "../pages/LoginPage";
 import LandingPage from "../pages/LandingPage";
 import DashboadPage from "../pages/DashboardPage";
 import authentication from "../helpers/authentication";
+import paths from "./paths";
 
 export default function AppRouter() {
   return (
     <Router>
       <div>
-        <AuthButton />
+        {/* <AuthButton />
 
         <ul>
           <li>
@@ -25,16 +26,16 @@ export default function AppRouter() {
           <li>
             <Link to="/protected">Protected Page</Link>
           </li>
-        </ul>
+        </ul> */}
 
         <Switch>
-          <Route path="/" exact>
+          <Route path={paths.landing} exact>
             <LandingPage />
           </Route>
-          <Route path="/login">
+          <Route path={paths.login}>
             <LoginPage />
           </Route>
-          <PrivateRoute path="/protected">
+          <PrivateRoute path={paths.dashboard}>
             <DashboadPage />
           </PrivateRoute>
         </Switch>
