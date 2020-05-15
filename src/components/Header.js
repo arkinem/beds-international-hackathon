@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import BcsLogo from "./icons/BcsLogo";
+// import BcsLogo from "./icons/BcsLogo";
 import { useHistory } from "react-router-dom";
 import authentication from "../helpers/authentication";
 import paths from "../navigation/paths";
@@ -13,7 +13,7 @@ const Header = (props) => {
   return (
     <Container>
       <BcsContainer>
-        <BcsLogo />
+        {/* <BcsLogo /> */}
         <BcsName>STUDENT CHAPTER</BcsName>
       </BcsContainer>
       {!isAuthenticated ? (
