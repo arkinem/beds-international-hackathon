@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import Button from "../Button";
 import ScenarioItem from "./ScenarioItem";
-import { device } from "../../helpers/devices";
+import { device } from "../../constants/layout";
 
 const ScenariosCard = (props) => (
   <Container>

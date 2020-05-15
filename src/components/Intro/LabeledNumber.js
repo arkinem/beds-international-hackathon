@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import { device } from "../../constants/layout";
 
 const LabeledNumber = ({ number, label }) => {
   const formattedNumber = number < 10 ? `0${number}` : number;
@@ -22,12 +23,20 @@ const Container = styled.div`
 
 const Number = styled.span`
   font-weight: 400;
-  font-size: 64px;
   margin-bottom: 5px;
+
+  font-size: 36px;
+  @media ${device.tablet} {
+    font-size: 64px;
+  }
 `;
 
 const Label = styled.div`
   font-weight: 300;
-  font-size: 24px;
   text-transform: capitalize;
+
+  font-size: 16px;
+  @media ${device.tablet} {
+    font-size: 24px;
+  }
 `;

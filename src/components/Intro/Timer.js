@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import Countdown from "react-countdown";
 import LabeledNumber from "./LabeledNumber";
+import { device } from "../../constants/layout";
 
 const renderer = ({ days, hours, minutes, seconds, completed }) => {
   return (
@@ -25,13 +26,25 @@ export default () => (
 
 const Container = styled.div`
   position: relative;
-  width: 550px;
   display: flex;
   align-items: center;
+  justify-content: center;
+
+  width: 320px;
+  @media ${device.tablet} {
+    width: 550px;
+  }
+
+  transition: all 0.5s;
 `;
 
 const Separator = styled.span`
   font-weight: 400;
-  font-size: 64px;
-  margin: -20px 26px 0 26px;
+
+  font-size: 32px;
+  margin: -25px 11px 0 11px;
+  @media ${device.tablet} {
+    font-size: 64px;
+    margin: -20px 26px 0 26px;
+  }
 `;

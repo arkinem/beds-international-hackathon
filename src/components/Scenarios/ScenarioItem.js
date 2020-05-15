@@ -1,7 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import { device } from "../../helpers/devices";
-import { colors } from "../../helpers/style";
+import { colors, device } from "../../constants/layout";
 
 const ScenarioItem = ({ title }) => (
   <Container>
