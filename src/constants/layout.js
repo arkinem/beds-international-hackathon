@@ -23,20 +23,28 @@ export const device = {
   desktopL: `(min-width: ${size.desktop}px)`,
 };
 
-export const colors = {
-  // red: "#d84432",
-  red: "rgb(255,52,84)",
-  blueGrey: "rgb(36, 43, 51)",
-  background: "#011627",
+const basicPalette = {
   primary: "#F71735",
   fontDark: "rgb(30,30,30)",
   fontLight: "rgb(235,235,235)",
+};
+
+export const colors = {
+  ...basicPalette,
+  red: "rgb(255,52,84)",
+  blueGrey: "rgb(36, 43, 51)",
+  background: "#011627",
   mak: {
     surface: "#FFF",
     topBar: "#d8d8d8",
     leftDot: "#ff483f",
     middleDot: "#ecbb38",
     rightDot: "#36d3a8",
+  },
+  waves: {
+    first: basicPalette.primary,
+    second: "#f46036",
+    third: "#F77F00",
   },
 };
 
