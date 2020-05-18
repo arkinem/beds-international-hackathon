@@ -3,16 +3,22 @@ import styled from "styled-components";
 import { colors } from "../../constants/layout";
 import MakContainer from "../MakContainer";
 import { ParallaxLayer } from "react-spring/renderprops-addons";
+import ScenarioBubble from "./ScenarioBubble";
+import { withRouter } from "react-router-dom";
 
-const ScenariosLayer = () => (
-  <Layer offset={2} speed={-0}>
-    <MakContainer title={"Scenarios"}>
+const ScenariosLayer = (props) => {
+  return (
+    <Layer offset={2} speed={-0}>
+      {/* <MakContainer title={"Scenarios"}>
       <ContentContainer>Scenarios</ContentContainer>
-    </MakContainer>
-  </Layer>
-);
+    </MakContainer> */}
+      <button onClick={() => props.history.push("scenario")}>Scenarios</button>
+      <ScenarioBubble />
+    </Layer>
+  );
+};
 
-export default ScenariosLayer;
+export default withRouter(ScenariosLayer);
 
 const Layer = styled(ParallaxLayer)`
   display: flex;

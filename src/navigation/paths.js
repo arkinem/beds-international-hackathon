@@ -1,5 +1,6 @@
 export default {
   landing: "/",
   login: "/login",
-  dashboard: "/dashboard"
+  dashboard: "/dashboard",
+  scenario: "/scenario",
 };

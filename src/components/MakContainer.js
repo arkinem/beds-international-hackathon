@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import ReactResizeDetector from "react-resize-detector";
-import { colors } from "../constants/layout";
+import { colors, shadow } from "../constants/layout";
 
 const contentHorizontalPadding = 20;
 const windowTopBarHeight = 30;
@@ -30,9 +30,9 @@ const MakContainer = ({ title, children }) => (
     `}
           />
 
-          <Dot cx="15" cy="15" r="7" color={"#ff483f"} />
-          <Dot cx="35" cy="15" r="7" color={"#ecbb38"} />
-          <Dot cx="55" cy="15" r="7" color={"#36d3a8"} />
+          <Dot cx="15" cy="15" r="7" color={colors.mak.leftDot} />
+          <Dot cx="35" cy="15" r="7" color={colors.mak.middleDot} />
+          <Dot cx="55" cy="15" r="7" color={colors.mak.rightDot} />
           {title && (
             <Text x="50%" y="21">
               {title}
@@ -55,7 +55,7 @@ const Container = styled.div`
   width: 80%;
   min-height: 100px;
   border-radius: ${cornerRadius}px;
-  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+  box-shadow: ${shadow.strong};
 `;
 
 const WindowSvg = styled.svg`

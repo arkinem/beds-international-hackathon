@@ -1,52 +1,65 @@
 import React from "react";
 import styled from "styled-components";
-import { colors } from "../../constants/layout";
+import { colors, device } from "../../constants/layout";
 
-const ScheduleItem = ({ time, title, description }) => (
+const ScheduleItem = ({ time, name, details }) => (
   <Container>
-    <TimeContainer>{time}</TimeContainer>
-    <Content>
-      <Title>{title}</Title>
-      <Description>{description}</Description>
-    </Content>
+    <Heading>
+      <Time>{time}</Time>
+      <Text>{name}</Text>
+    </Heading>
+    {details && <SecondaryText>{details}</SecondaryText>}
   </Container>
 );
 
 export default ScheduleItem;
 
 const Container = styled.div`
-  padding: 12px;
-  margin: 12px 0;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
-  flex: 1;
-  background: ${colors.blueGrey};
+  position: relative;
   display: flex;
-  flex-direction: row;
-  max-width: 550px;
-  align-self: center;
-`;
-
-const TimeContainer = styled.div`
-  width: 150px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 20px;
-  font-weight: bold;
-`;
-
-const Content = styled.div`
-  flex: 1;
   flex-direction: column;
-`;
-
-const Title = styled.h4`
-  font-size: 20px;
   margin-bottom: 8px;
-  font-weight: bold;
 `;
 
-const Description = styled.p`
+const Heading = styled.div`
+  display: flex;
+
+  /* flex-direction: column;
+  margin-bottom: 6px;
+  @media ${device.mobileL} { */
+    flex-direction: row;
+    /* margin-bottom: 0;
+  } */
+
+  transition: all 0.5s;
+`;
+
+const Time = styled.p`
   font-size: 16px;
-  margin-bottom: 8px;
+  line-height: 18px;
+  letter-spacing: 0.7px;
+  margin-bottom: 4px;
+  margin-right: 16px;
+`;
+
+const Text = styled.p`
+  font-size: 16px;
+  line-height: 18px;
+  letter-spacing: 0.7px;
+  color: ${colors.background};
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+`;
+
+const SecondaryText = styled.p`
+  font-size: 14px;
+  opacity: 0.8;
+  letter-spacing: 0.7px;
+
+  display: none;
+  @media ${device.mobileL} {
+    display: block;
+    padding-left: 60px;
+  }
 `;
