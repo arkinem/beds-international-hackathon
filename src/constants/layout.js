@@ -31,6 +31,17 @@ export const colors = {
   primary: "#F71735",
   fontDark: "rgb(30,30,30)",
   fontLight: "rgb(235,235,235)",
+  mak: {
+    surface: "#FFF",
+    topBar: "#d8d8d8",
+    leftDot: "#ff483f",
+    middleDot: "#ecbb38",
+    rightDot: "#36d3a8",
+  },
+};
+
+export const shadow = {
+  strong: "0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);",
 };
 
 export const GlobalStyle = createGlobalStyle`

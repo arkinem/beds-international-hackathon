@@ -18,7 +18,7 @@ const renderer = ({ days, hours, minutes, seconds, completed }) => {
   );
 };
 
-const hackathonDate = "2020-05-15T10:00:00Z";
+const hackathonDate = "2020-10-24T10:00:00Z";
 
 export default () => (
   <Countdown date={Date.parse(hackathonDate)} renderer={renderer} />

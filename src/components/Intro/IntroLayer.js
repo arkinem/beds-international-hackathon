@@ -1,15 +1,34 @@
 import React from "react";
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
 import Timer from "./Timer";
 import { ParallaxLayer } from "react-spring/renderprops-addons";
 import { device, colors } from "../../constants/layout";
+import { Spring } from "react-spring/renderprops";
+import Logo from "./Logo";
 
-const IntroLayer = (props) => (
-  <Container offset={0} speed={0.2}>
-    <Title>Inter University Hackathon 2020</Title>
-    <Timer />
-  </Container>
-);
+class IntroLayer extends React.Component {
+  state = {
+    comeBack: false,
+  };
+
+  render() {
+    const { comeBack } = this.state;
+    console.log(
+      comeBack,
+      "from",
+      comeBack ? 0 : 650,
+      "to",
+      comeBack ? -650 : 0
+    );
+    return (
+      <Container offset={0} speed={0.2}>
+        <Logo />
+        <Title>Inter University Hackathon 2020</Title>
+        <Timer />
+      </Container>
+    );
+  }
+}
 
 export default IntroLayer;
 
@@ -40,4 +59,25 @@ const Title = styled.h1`
   }
 
   transition: all 0.5s;
+`;
+
+const dash = keyframes`
+  from {
+    stroke-dashoffset: 0;
+  }
+  to {
+    stroke-dashoffset: 100;
+  }
+  `;
+
+const Svg = styled.svg`
+  stroke-dasharray: 1000;
+  stroke-dashoffset: 1000;
+  animation: ${dash} 5s linear alternate infinite;
+`;
+
+const Path = styled.path`
+  stroke-width: 5px;
+  stroke: ${colors.primary};
+  fill: none;
 `;
