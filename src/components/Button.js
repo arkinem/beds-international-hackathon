@@ -1,22 +1,37 @@
 import React from "react";
 import styled from "styled-components";
-import { colors } from "../constants/layout";
+import { AwesomeButton } from "react-awesome-button";
+import "react-awesome-button/dist/themes/theme-rickiest.css";
+import { colors, font } from "../constants/layout";
 
-const Button = ({ title }) => <Container>{title}</Container>;
+const buttonSize = {
+  small: "small",
+  medium: "medium",
+  large: "large",
+};
+
+const Button = ({ title, size, className }) => (
+  <StyledButton
+    className={className}
+    type={"secondary"}
+    size={size || buttonSize.medium}
+    font
+  >
+    {title}
+  </StyledButton>
+);
 
 export default Button;
 
-const Container = styled.div`
-  height: 50px;
-  padding: 0 22px;
-  border-radius: 8px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: ${colors.red};
-  cursor: pointer;
-
-  :hover {
-    opacity: 0.9;
-  }
+const StyledButton = styled(AwesomeButton)`
+  --button-default-font-size: ${({ size }) =>
+    size === buttonSize.small ? 14 : size === buttonSize.medium ? 16 : 20}px;
+  --button-secondary-color: ${colors.button.main};
+  --button-secondary-color-dark: ${colors.button.dark};
+  --button-secondary-color-light: ${colors.button.light};
+  --button-secondary-color-hover: ${colors.button.hover};
+  --button-secondary-color-active: ${colors.button.active};
+  --button-secondary-border: 2px solid ${colors.button.border};
+  --button-large-width: 200px;
+  --button-large-height: 60px;
 `;

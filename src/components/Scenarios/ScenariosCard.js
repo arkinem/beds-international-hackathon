@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import Button from "../Button";
+// import Button from "../Button";
 import ScenarioItem from "./ScenarioItem";
 import { device } from "../../constants/layout";
 
@@ -8,7 +8,7 @@ const ScenariosCard = (props) => (
   <Container>
     <HeaderContainer>
       <Title>Scenarios</Title>
-      <Button title={"See all scenarios"} />
+      {/* <Button title={"See all scenarios"} /> */}
     </HeaderContainer>
     <CardsContainer>
       <Row>
