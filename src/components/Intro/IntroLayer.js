@@ -1,30 +1,32 @@
 import React from "react";
-import styled, { keyframes } from "styled-components";
+import styled from "styled-components";
 import Timer from "./Timer";
 import { ParallaxLayer } from "react-spring/renderprops-addons";
-import { device, colors } from "../../constants/layout";
-import { Spring } from "react-spring/renderprops";
+import { deviceSize, device, colors } from "../../constants/layout";
 import Logo from "./Logo";
+import Button from "../Button";
 
 class IntroLayer extends React.Component {
-  state = {
-    comeBack: false,
-  };
+  state = { windowWidth: window.innerWidth };
+
+  componentDidMount = () =>
+    window.addEventListener("resize", this.updateDimensions);
+
+  componentWillUnmount = () =>
+    window.removeEventListener("resize", this.updateDimensions);
+
+  updateDimensions = () => this.setState({ windowWidth: window.innerWidth });
 
   render() {
-    const { comeBack } = this.state;
-    console.log(
-      comeBack,
-      "from",
-      comeBack ? 0 : 650,
-      "to",
-      comeBack ? -650 : 0
-    );
+    const { windowWidth } = this.state;
+    const buttonSize = windowWidth < deviceSize.tablet ? "medium" : "large";
+    console.log(windowWidth, deviceSize.tablet, buttonSize);
     return (
       <Container offset={0} speed={0.2}>
         <Logo />
         <Title>Inter University Hackathon 2020</Title>
         <Timer />
+        <SignUpButton size={buttonSize} title={"Sign up"} />
       </Container>
     );
   }
@@ -61,23 +63,12 @@ const Title = styled.h1`
   transition: all 0.5s;
 `;
 
-const dash = keyframes`
-  from {
-    stroke-dashoffset: 0;
-  }
-  to {
-    stroke-dashoffset: 100;
-  }
-  `;
+const SignUpButton = styled(Button)`
+  position: absolute;
+  bottom: 15%;
 
-const Svg = styled.svg`
-  stroke-dasharray: 1000;
-  stroke-dashoffset: 1000;
-  animation: ${dash} 5s linear alternate infinite;
-`;
-
-const Path = styled.path`
-  stroke-width: 5px;
-  stroke: ${colors.primary};
-  fill: none;
+  @media ${device.tablet} {
+    position: unset;
+    margin-top: 10vh;
+  }
 `;

@@ -1,7 +1,7 @@
 import { createGlobalStyle } from "styled-components";
 import reset from "styled-reset";
 
-const size = {
+export const deviceSize = {
   mobileS: 320,
   mobileM: 375,
   mobileL: 425,
@@ -13,20 +13,20 @@ const size = {
 };
 
 export const device = {
-  mobileS: `(min-width: ${size.mobileS}px)`,
-  mobileM: `(min-width: ${size.mobileM}px)`,
-  mobileL: `(min-width: ${size.mobileL}px)`,
-  tablet: `(min-width: ${size.tablet}px)`,
-  laptop: `(min-width: ${size.laptop}px)`,
-  laptopL: `(min-width: ${size.laptopL}px)`,
-  desktop: `(min-width: ${size.desktop}px)`,
-  desktopL: `(min-width: ${size.desktop}px)`,
+  mobileS: `(min-width: ${deviceSize.mobileS}px)`,
+  mobileM: `(min-width: ${deviceSize.mobileM}px)`,
+  mobileL: `(min-width: ${deviceSize.mobileL}px)`,
+  tablet: `(min-width: ${deviceSize.tablet}px)`,
+  laptop: `(min-width: ${deviceSize.laptop}px)`,
+  laptopL: `(min-width: ${deviceSize.laptopL}px)`,
+  desktop: `(min-width: ${deviceSize.desktop}px)`,
+  desktopL: `(min-width: ${deviceSize.desktop}px)`,
 };
 
 const basicPalette = {
   primary: "#F71735",
   fontDark: "rgb(30,30,30)",
-  fontLight: "rgb(235,235,235)",
+  fontLight: "rgb(245,245,245)",
 };
 
 export const colors = {
@@ -46,17 +46,29 @@ export const colors = {
     second: "#f46036",
     third: "#F77F00",
   },
+  button: {
+    main: "rgb(250,250,250)",
+    dark: basicPalette.primary,
+    light: "#F71735",
+    hover: "#fff6f7",
+    active: "#feecef",
+    border: "#fb8b9a",
+  },
 };
 
 export const shadow = {
   strong: "0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);",
 };
 
+export const font = {
+  main: "Ubuntu",
+};
+
 export const GlobalStyle = createGlobalStyle`
   ${reset}
   body {
     color: white !important;
-    font-family: Ubuntu !important;
+    font-family: ${font.main} !important;
   }
 
   html,

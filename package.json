@@ -8,6 +8,7 @@
     "@testing-library/react": "^9.3.2",
     "@testing-library/user-event": "^7.1.2",
     "react": "^16.13.0",
+    "react-awesome-button": "^6.5.1",
     "react-countdown": "^2.2.1",
     "react-dom": "^16.13.0",
     "react-particles-js": "^2.7.1",
