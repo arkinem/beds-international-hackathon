@@ -1,13 +1,13 @@
 import React from "react";
-import { BrowserRouter as Router, Route } from "react-router-dom";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+// import { AnimatedSwitch } from "react-router-transition";
+// import styled from "styled-components";
 import PrivateRoute from "./PrivateRoute";
 import LoginPage from "../pages/LoginPage";
 import LandingPage from "../pages/LandingPage";
 import DashboadPage from "../pages/DashboardPage";
 import paths from "./paths";
 import ScenariosPage from "../pages/ScenariosPage";
-import { AnimatedSwitch } from "react-router-transition";
-import styled from "styled-components";
 import SignUpPage from "../pages/SignUpPage";
 import SignUpStudentPage from "../pages/SignUpStudentPage";
 import SignUpUniversityPage from "../pages/SignUpUniversityPage";
@@ -16,10 +16,10 @@ export default function AppRouter() {
   return (
     <Router>
       <Switch
-        atEnter={{ opacity: 0 }}
-        atLeave={{ opacity: 0 }}
-        atActive={{ opacity: 1, background: "black" }}
-        className="switch-wrapper"
+      // atEnter={{ opacity: 0 }}
+      // atLeave={{ opacity: 0, background: "pink" }}
+      // atActive={{ opacity: 1 }}
+      // className="switch-wrapper"
       >
         <Route path={paths.landing} exact>
           <LandingPage />
@@ -47,12 +47,12 @@ export default function AppRouter() {
   );
 }
 
-const Switch = styled(AnimatedSwitch)`
-  .switch-wrapper {
-    position: relative;
-  }
+// const Switch = styled(AnimatedSwitch)`
+//   .switch-wrapper {
+//     position: relative;
+//   }
 
-  .switch-wrapper > div {
-    position: absolute;
-  }
-`;
+//   .switch-wrapper > div {
+//     position: absolute;
+//   }
+// `;
