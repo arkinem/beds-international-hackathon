@@ -27,7 +27,7 @@ const ScenariosLayer = ({ history }) => {
     >
       <Circle style={{ transform: props.xy.interpolate(trans1) }}>
         <Heading>Scenarios</Heading>
-        <Button color={"primary"} onClick={() => history.push(paths.scenario)}>
+        <Button color={"primary"} onClick={() => history.push(paths.scenarios)}>
           View all
         </Button>
       </Circle>
