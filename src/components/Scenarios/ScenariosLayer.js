@@ -5,6 +5,7 @@ import { ParallaxLayer } from "react-spring/renderprops-addons";
 import { withRouter } from "react-router-dom";
 import { useSpring, animated } from "react-spring";
 import Button from "../Button";
+import paths from "../../navigation/paths";
 
 const calc = (x, y) => [x - window.innerWidth / 2, y - window.innerHeight / 2];
 const trans1 = (x, y) => `translate3d(${x / 10}px,${y / 10}px,0)`;
@@ -26,7 +27,7 @@ const ScenariosLayer = ({ history }) => {
     >
       <Circle style={{ transform: props.xy.interpolate(trans1) }}>
         <Heading>Scenarios</Heading>
-        <Button color={"primary"} onClick={() => history.push("scenario")}>
+        <Button color={"primary"} onClick={() => history.push(paths.scenario)}>
           View all
         </Button>
       </Circle>
