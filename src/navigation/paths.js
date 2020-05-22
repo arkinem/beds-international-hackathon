@@ -2,7 +2,7 @@ export default {
   landing: "/",
   login: "/login",
   dashboard: "/dashboard",
-  scenario: "/scenarios",
+  scenarios: "/scenarios/:id?",
   signUp: "/signup",
   signUpStudent: "/signup/student",
   signUpUniversity: "/signup/university",
