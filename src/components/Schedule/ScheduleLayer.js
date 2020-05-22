@@ -6,15 +6,17 @@ import { ParallaxLayer } from "react-spring/renderprops-addons";
 import ScheduleItem from "./ScheduleItem";
 import schedule from "../../constants/schedule";
 
+const dateFormat = "dddd, DD MMMM YYYY";
+
 const ScheduleLayer = () => (
   <Layer offset={3} speed={0.1}>
     <MakContainer title={"Schedule"}>
       <ContentContainer>
-        <Title>Saturday, 24.10.2020</Title>
+        <Title>{schedule.startDate.format(dateFormat)}</Title>
         {schedule.saturday.map((item) => (
           <ScheduleItem {...item} />
         ))}
-        <Title marginTop={8}>Sunday, 25 October 2020</Title>
+        <Title marginTop={8}>{schedule.endDate.format(dateFormat)}</Title>
         {schedule.sunday.map((item) => (
           <ScheduleItem {...item} />
         ))}
