@@ -87,7 +87,8 @@ export const GlobalStyle = createGlobalStyle`
 		width: 100%;
 		height: 100%;
 		margin: 0;
-		padding: 0;
+    padding: 0;
+    min-width: 380px !important;
     background-color: ${colors.background};
 	}
 `;
