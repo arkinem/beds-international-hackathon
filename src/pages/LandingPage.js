@@ -15,10 +15,10 @@ class LandingPage extends React.Component {
       <Parallax ref={(ref) => (this.parallax = ref)} pages={4}>
         <Waves />
         <Stars />
-        <CalendarLayer />
+        {/* <CalendarLayer /> */}
         <Clouds />
 
-        <ParallaxLayer
+        {/* <ParallaxLayer
           offset={2.5}
           speed={-0.4}
           style={{
@@ -29,10 +29,10 @@ class LandingPage extends React.Component {
             justifyContent: "flex-end",
             pointerEvents: "none",
           }}
-        >
-          {/* <img src={url("earth")} style={{ width: "60%" }} /> */}
-          <img src={"./assets/images/logotype.png"} style={{ width: "20%" }} />
-        </ParallaxLayer>
+        > */}
+        {/* <img src={url("earth")} style={{ width: "60%" }} /> */}
+        {/* <img src={"./assets/images/logotype.png"} style={{ width: "20%" }} />
+        </ParallaxLayer> */}
 
         <IntroLayer />
         <AboutLayer />
