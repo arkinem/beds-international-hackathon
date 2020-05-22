@@ -3,19 +3,19 @@ import styled from "styled-components";
 import { colors } from "../../constants/layout";
 import MakContainer from "../MakContainer";
 import { ParallaxLayer } from "react-spring/renderprops-addons";
-import strings from "../../constants/strings";
 import ScheduleItem from "./ScheduleItem";
+import schedule from "../../constants/schedule";
 
 const ScheduleLayer = () => (
   <Layer offset={3} speed={0.1}>
     <MakContainer title={"Schedule"}>
       <ContentContainer>
         <Title>Saturday, 24.10.2020</Title>
-        {strings.scheduleSat.map((item) => (
+        {schedule.saturday.map((item) => (
           <ScheduleItem {...item} />
         ))}
         <Title marginTop={8}>Sunday, 25 October 2020</Title>
-        {strings.scheduleSun.map((item) => (
+        {schedule.sunday.map((item) => (
           <ScheduleItem {...item} />
         ))}
         {/* All as Google Hangouts call! Links in emails for registered. */}

@@ -1,11 +1,12 @@
 import React from "react";
 import styled from "styled-components";
-import Timer from "./Timer";
+import { withRouter } from "react-router-dom";
 import { ParallaxLayer } from "react-spring/renderprops-addons";
 import { deviceSize, device, colors } from "../../constants/layout";
+import strings from "../../constants/strings";
 import Logo from "./Logo";
+import Timer from "./Timer";
 import Button from "../Button";
-import { withRouter } from "react-router-dom";
 import paths from "../../navigation/paths";
 
 class IntroLayer extends React.Component {
@@ -27,7 +28,7 @@ class IntroLayer extends React.Component {
     return (
       <Container offset={0} speed={0.2}>
         <Logo />
-        <Title>Inter University Hackathon 2020</Title>
+        <Title>{strings.eventName}</Title>
         <Timer />
         <SignUpButton
           size={buttonSize}
