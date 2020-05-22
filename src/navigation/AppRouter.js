@@ -5,7 +5,7 @@ import LoginPage from "../pages/LoginPage";
 import LandingPage from "../pages/LandingPage";
 import DashboadPage from "../pages/DashboardPage";
 import paths from "./paths";
-import ScenarioPage from "../pages/ScenarioPage";
+import ScenariosPage from "../pages/ScenariosPage";
 import { AnimatedSwitch } from "react-router-transition";
 import styled from "styled-components";
 import SignUpPage from "../pages/SignUpPage";
@@ -28,7 +28,7 @@ export default function AppRouter() {
           <LoginPage />
         </Route>
         <Route path={paths.scenario}>
-          <ScenarioPage />
+          <ScenariosPage />
         </Route>
         <Route path={paths.signUp} exact>
           <SignUpPage />
