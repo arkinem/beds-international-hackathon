@@ -5,6 +5,8 @@ import { ParallaxLayer } from "react-spring/renderprops-addons";
 import { deviceSize, device, colors } from "../../constants/layout";
 import Logo from "./Logo";
 import Button from "../Button";
+import { withRouter } from "react-router-dom";
+import paths from "../../navigation/paths";
 
 class IntroLayer extends React.Component {
   state = { windowWidth: window.innerWidth };
@@ -20,19 +22,23 @@ class IntroLayer extends React.Component {
   render() {
     const { windowWidth } = this.state;
     const buttonSize = windowWidth < deviceSize.tablet ? "medium" : "large";
-    console.log(windowWidth, deviceSize.tablet, buttonSize);
+
     return (
       <Container offset={0} speed={0.2}>
         <Logo />
         <Title>Inter University Hackathon 2020</Title>
         <Timer />
-        <SignUpButton size={buttonSize} title={"Sign up"} />
+        <SignUpButton
+          size={buttonSize}
+          title={"Sign up"}
+          onClick={() => this.props.history.push(paths.signUp)}
+        />
       </Container>
     );
   }
 }
 
-export default IntroLayer;
+export default withRouter(IntroLayer);
 
 const Container = styled(ParallaxLayer)`
   position: relative;

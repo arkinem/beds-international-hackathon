@@ -25,6 +25,7 @@ export const device = {
 
 const basicPalette = {
   primary: "#F71735",
+  secondary: "#F77F00",
   fontDark: "rgb(30,30,30)",
   fontLight: "rgb(245,245,245)",
 };
@@ -47,13 +48,22 @@ export const colors = {
     third: "#F77F00",
   },
   button: {
-    main: "rgb(250,250,250)",
-    dark: basicPalette.primary,
-    light: "#F71735",
-    hover: "#fff6f7",
-    active: "#feecef",
-    border: "#fb8b9a",
+    primary: {
+      main: "rgb(250,250,250)",
+      accent: basicPalette.primary,
+      hover: "#fff6f7",
+      active: "#feecef",
+      border: "#fb8b9a",
+    },
+    secondary: {
+      main: "rgb(250,250,250)",
+      accent: basicPalette.secondary,
+      hover: "#fff6f7",
+      active: "#feecef",
+      border: "#fb8b9a",
+    },
   },
+  scenariosCircle: "#F77F00",
 };
 
 export const shadow = {

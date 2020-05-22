@@ -8,6 +8,9 @@ import paths from "./paths";
 import ScenarioPage from "../pages/ScenarioPage";
 import { AnimatedSwitch } from "react-router-transition";
 import styled from "styled-components";
+import SignUpPage from "../pages/SignUpPage";
+import SignUpStudentPage from "../pages/SignUpStudentPage";
+import SignUpUniversityPage from "../pages/SignUpUniversityPage";
 
 export default function AppRouter() {
   return (
@@ -26,6 +29,15 @@ export default function AppRouter() {
         </Route>
         <Route path={paths.scenario}>
           <ScenarioPage />
+        </Route>
+        <Route path={paths.signUp} exact>
+          <SignUpPage />
+        </Route>
+        <Route path={paths.signUpStudent}>
+          <SignUpStudentPage />
+        </Route>
+        <Route path={paths.signUpUniversity}>
+          <SignUpUniversityPage />
         </Route>
         <PrivateRoute path={paths.dashboard}>
           <DashboadPage />
