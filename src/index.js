@@ -5,7 +5,7 @@ import AppRouter from "./navigation/AppRouter";
 import { GlobalStyle } from "./constants/layout";
 
 serviceWorker.unregister();
-console.log("Env test: ", process.env.REACT_APP_TEST);
+
 const app = (
   <>
     <GlobalStyle />
