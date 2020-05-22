@@ -22,6 +22,7 @@ class IntroLayer extends React.Component {
   render() {
     const { windowWidth } = this.state;
     const buttonSize = windowWidth < deviceSize.tablet ? "medium" : "large";
+    const color = windowWidth < deviceSize.tablet ? "primary" : "secondary";
 
     return (
       <Container offset={0} speed={0.2}>
@@ -31,6 +32,7 @@ class IntroLayer extends React.Component {
         <SignUpButton
           size={buttonSize}
           title={"Sign up"}
+          color={color}
           onClick={() => this.props.history.push(paths.signUp)}
         />
       </Container>
@@ -77,4 +79,6 @@ const SignUpButton = styled(Button)`
     position: unset;
     margin-top: 10vh;
   }
+
+  transition: all 0.5s;
 `;
