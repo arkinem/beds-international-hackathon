@@ -3,6 +3,7 @@ import styled from "styled-components";
 import Countdown from "react-countdown";
 import LabeledNumber from "./LabeledNumber";
 import { device } from "../../constants/layout";
+import schedule from "../../constants/schedule";
 
 const renderer = ({ days, hours, minutes, seconds, completed }) => {
   return (
@@ -18,10 +19,8 @@ const renderer = ({ days, hours, minutes, seconds, completed }) => {
   );
 };
 
-const hackathonDate = "2020-10-24T10:00:00Z";
-
 export default () => (
-  <Countdown date={Date.parse(hackathonDate)} renderer={renderer} />
+  <Countdown date={schedule.startDate.toDate()} renderer={renderer} />
 );
 
 const Container = styled.div`

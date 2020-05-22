@@ -30,7 +30,7 @@ export default function AppRouter() {
         <Route path={paths.login}>
           <LoginPage />
         </Route>
-        <Route path={paths.scenarios}>
+        <Route path={`${paths.scenarios}/:id?`}>
           <ScenariosPage />
         </Route>
         <Route path={paths.signUp} exact>
