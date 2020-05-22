@@ -2,7 +2,7 @@ import React from "react";
 import { Parallax, ParallaxLayer } from "react-spring/renderprops-addons";
 import AboutLayer from "../components/About/AboutLayer";
 import IntroLayer from "../components/Intro/IntroLayer";
-import CalendarLayer from "../components/Scenarios/CalendarLayer";
+// import CalendarLayer from "../components/Parallax/CalendarLayer";
 import ScenariosLayer from "../components/Scenarios/ScenariosLayer";
 import ScheduleLayer from "../components/Schedule/ScheduleLayer";
 import Waves from "../components/Parallax/Waves";

@@ -1,21 +1,17 @@
 import React from "react";
-import PageContainer from "../components/PageContainer";
 import styled from "styled-components";
 import { withRouter } from "react-router-dom";
+import ScenariosNavigation from "../components/Scenarios/ScenariosNavigation";
+import ScenarioViewer from "../components/Scenarios/ScenarioViewer";
+import PageContainer from "../components/PageContainer";
+import strings from "../constants/strings";
 
 const ScenariosPage = ({ match }) => {
-  const { id } = match.params;
-
-  console.log("id", id);
   return (
-    <PageContainer title={"Scenarios"}>
+    <PageContainer title={strings.Scenarios}>
       <NavigationContainer>
-        <TabBar>
-          <Tab>Option1</Tab>
-          <Tab>Option2</Tab>
-          <Tab>Option3</Tab>
-        </TabBar>
-        <TabContent>content</TabContent>
+        <ScenariosNavigation />
+        <ScenarioViewer />
       </NavigationContainer>
     </PageContainer>
   );
@@ -27,20 +23,4 @@ const NavigationContainer = styled.div`
   flex: 1;
   display: flex;
   flex-direction: column;
-`;
-
-const TabBar = styled.div`
-  height: 80px;
-  display: flex;
-  flex-direction: row;
-  background: green;
-`;
-
-const Tab = styled.div`
-  padding: 16px;
-`;
-
-const TabContent = styled.div`
-  flex: 1;
-  background: pink;
 `;

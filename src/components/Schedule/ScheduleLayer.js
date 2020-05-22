@@ -1,16 +1,17 @@
 import React from "react";
 import styled from "styled-components";
-import { colors } from "../../constants/layout";
-import MakContainer from "../MakContainer";
 import { ParallaxLayer } from "react-spring/renderprops-addons";
-import ScheduleItem from "./ScheduleItem";
+import { colors } from "../../constants/layout";
 import schedule from "../../constants/schedule";
+import strings from "../../constants/strings";
+import MakContainer from "../MakContainer";
+import ScheduleItem from "./ScheduleItem";
 
 const dateFormat = "dddd, DD MMMM YYYY";
 
 const ScheduleLayer = () => (
   <Layer offset={3} speed={0.1}>
-    <MakContainer title={"Schedule"}>
+    <MakContainer title={strings.Schedule}>
       <ContentContainer>
         <Title>{schedule.startDate.format(dateFormat)}</Title>
         {schedule.saturday.map((item) => (
