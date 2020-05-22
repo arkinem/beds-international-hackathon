@@ -1,5 +1,5 @@
 import React from "react";
-import styled, { css } from "styled-components";
+import styled from "styled-components";
 import stars from "../assets/images/stars.svg";
 import { withRouter } from "react-router-dom";
 import { IoMdClose } from "react-icons/io";
@@ -24,15 +24,20 @@ export default withRouter(PageContainer);
 
 const Container = styled.div`
   position: relative;
-  min-height: calc(100vh - 128px);
   background-image: url(${stars});
   background-size: cover !important;
   display: flex;
   flex-direction: column;
 
   padding: 22px;
+  min-height: calc(100vh - 44px);
+  max-height: calc(100vh - 44px);
+  height: calc(100vh - 44px);
   @media ${device.tablet} {
     padding: 64px;
+    min-height: calc(100vh - 128px);
+    max-height: calc(100vh - 128px);
+    height: calc(100vh - 128px);
   }
 `;
 
