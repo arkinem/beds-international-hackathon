@@ -3,11 +3,14 @@ import ReactDOM from "react-dom";
 import * as serviceWorker from "./serviceWorker";
 import AppRouter from "./navigation/AppRouter";
 import { GlobalStyle } from "./constants/layout";
+import UniversitiesProvider from "./providers/UniversitiesProvider";
 
 const app = (
   <>
     <GlobalStyle />
-    <AppRouter />
+    <UniversitiesProvider>
+      <AppRouter />
+    </UniversitiesProvider>
   </>
 );
 
