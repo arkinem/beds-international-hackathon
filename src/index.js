@@ -1,6 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import * as serviceWorker from "./serviceWorker";
+import "./App.css";
 import AppRouter from "./navigation/AppRouter";
 import { GlobalStyle } from "./constants/layout";
 import UniversitiesProvider from "./providers/UniversitiesProvider";

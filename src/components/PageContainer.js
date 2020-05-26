@@ -30,14 +30,10 @@ const Container = styled.div`
   flex-direction: column;
 
   padding: 22px;
-  min-height: calc(100vh - 44px);
-  max-height: calc(100vh - 44px);
-  height: calc(100vh - 44px);
+  min-height: 100vh;
   @media ${device.tablet} {
     padding: 64px;
-    min-height: calc(100vh - 128px);
-    max-height: calc(100vh - 128px);
-    height: calc(100vh - 128px);
+    min-height: 100vh;
   }
 `;
 
@@ -50,6 +46,7 @@ const Heading = styled.div`
 `;
 
 const Title = styled.h1`
+  color: ${colors.fontLight};
   line-height: 42px;
   font-size: 32px;
   font-weight: 700;
@@ -66,7 +63,14 @@ const BackButton = styled.div`
   align-items: center;
   justify-content: center;
 
+  background: transparent;
   :hover {
-    background: rgba(0, 0, 0, 0.99);
+    background: rgba(255, 255, 255, 0.06);
   }
+
+  :active {
+    background: rgba(255, 255, 255, 0.12);
+  }
+
+  transition: all 0.5s;
 `;
