@@ -46,8 +46,9 @@ const Bubble = styled.div`
 `;
 
 const Heading = styled.h1`
+  color: ${colors.fontLight};
   font-size: 36px;
-  font-weight: 700px;
+  font-weight: 700;
   /* margin-bottom: 12px; */
   margin-bottom: 36px;
 `;
