@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import { withRouter, Link } from "react-router-dom";
+import { withRouter } from "react-router-dom";
 import { Tabs } from "antd";
 import scenarios from "../../constants/scenarios";
 import { colors } from "../../constants/layout";
@@ -36,7 +36,7 @@ export default withRouter(ScenariosTabs);
 
 const Navigation = styled(Tabs)`
   color: ${colors.fontLight};
-  width: 90%;
+  width: 100%;
   max-width: 700px;
   min-width: 320px;
   .ant-tabs {
@@ -61,24 +61,5 @@ const Navigation = styled(Tabs)`
 
   .ant-tabs-ink-bar {
     background-color: ${colors.secondary};
-  }
-`;
-
-const Container = styled.div`
-  height: 60px;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  margin: 10px 0;
-  /* background: green; */
-`;
-
-const Tab = styled(Link)`
-  padding: 16px;
-  color: ${({ active }) => (active ? colors.secondary : colors.fontLight)};
-  text-decoration: none;
-
-  :hover {
-    opacity: 0.8;
   }
 `;
