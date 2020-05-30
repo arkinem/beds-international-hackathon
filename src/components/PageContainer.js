@@ -10,9 +10,12 @@ const PageContainer = ({ title, children, history }) => {
   return (
     <Container>
       <Heading>
-        <BackButton onClick={() => history.push(paths.landing)}>
-          <IoMdClose color={colors.fontLight} size={40} />
-        </BackButton>
+        <LeftSection onClick={() => history.push(paths.landing)}>
+          <CloseButton>
+            <IoMdClose color={colors.fontLight} size={40} />
+          </CloseButton>
+          <Label>Close</Label>
+        </LeftSection>
         {title && <Title>{title}</Title>}
       </Heading>
       {children}
@@ -30,34 +33,40 @@ const Container = styled.div`
   flex-direction: column;
 
   padding: 22px;
-  min-height: calc(100vh - 44px);
-  max-height: calc(100vh - 44px);
-  height: calc(100vh - 44px);
+  min-height: 100vh;
   @media ${device.tablet} {
     padding: 64px;
-    min-height: calc(100vh - 128px);
-    max-height: calc(100vh - 128px);
-    height: calc(100vh - 128px);
+    min-height: 100vh;
   }
 `;
 
 const Heading = styled.div`
   position: relative;
+  width: 100%;
   display: flex;
   flex-direction: row;
   justify-content: center;
   margin-bottom: 12px;
+  max-width: 700px;
+  align-self: center;
 `;
 
 const Title = styled.h1`
+  color: ${colors.fontLight};
   line-height: 42px;
   font-size: 32px;
   font-weight: 700;
 `;
 
-const BackButton = styled.div`
+const LeftSection = styled.div`
   position: absolute;
   left: 0;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+`;
+
+const CloseButton = styled.div`
   width: 42px;
   height: 42px;
   cursor: pointer;
@@ -66,7 +75,34 @@ const BackButton = styled.div`
   align-items: center;
   justify-content: center;
 
-  :hover {
-    background: rgba(0, 0, 0, 0.99);
+  background: transparent;
+
+  ${LeftSection}:hover & {
+    background: rgba(255, 255, 255, 0.06);
+  }
+
+  ${LeftSection}:active & {
+    background: rgba(255, 255, 255, 0.12);
+  }
+
+  transition: all 0.5s;
+`;
+
+const Label = styled.p`
+  margin: 0 8px;
+  font-size: 18px;
+  font-weight: 500;
+
+  ${LeftSection}:hover & {
+    opacity: 0.9;
+  }
+
+  ${LeftSection}:active & {
+    opacity: 0.8;
+  }
+
+  display: none;
+  @media ${device.tablet} {
+    display: block;
   }
 `;

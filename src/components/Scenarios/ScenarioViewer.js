@@ -1,26 +1,36 @@
 import React from "react";
 import styled from "styled-components";
-import { withRouter } from "react-router-dom";
-import scenarios from "../../constants/scenarios";
-import paths from "../../navigation/paths";
+import { colors } from "../../constants/layout";
 
-const ScenarioViewer = ({ match, history }) => {
-  const { id } = match.params;
-  const scenario = scenarios.find(({ name }) => name === id);
-
-  if (!scenario) {
-    if (scenarios.length > 0)
-      history.push(`${paths.scenarios}/${scenarios[0].name}`);
-  }
-
-  const description = scenario ? scenario.description : "";
-
-  return <Container>{description}</Container>;
+const ScenarioViewer = ({ scenario }) => {
+  return (
+    <Container>
+      {scenario.map(({ heading, content }, id) => (
+        <React.Fragment key={id}>
+          <Heading>{heading}</Heading>
+          {Array.isArray(content) ? (
+            content.map((text, textId) => <Text key={textId}>{text}</Text>)
+          ) : (
+            <Text>{content}</Text>
+          )}
+        </React.Fragment>
+      ))}
+    </Container>
+  );
 };
 
-export default withRouter(ScenarioViewer);
+export default ScenarioViewer;
 
 const Container = styled.div`
   flex: 1;
-  /* background: pink; */
+`;
+
+const Heading = styled.h3`
+  color: ${colors.secondary};
+  margin-bottom: 8px;
+  font-size: 18px;
+`;
+
+const Text = styled.p`
+  margin-bottom: 16px;
 `;

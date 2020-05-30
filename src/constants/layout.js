@@ -27,7 +27,7 @@ const basicPalette = {
   primary: "#F71735",
   secondary: "#F77F00",
   fontDark: "rgb(30,30,30)",
-  fontLight: "rgb(245,245,245)",
+  fontLight: "#F5F5F5",
 };
 
 export const colors = {
