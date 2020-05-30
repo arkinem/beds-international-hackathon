@@ -26,7 +26,7 @@ const Container = styled.div`
 `;
 
 const Heading = styled.h3`
-  color: ${colors.primary};
+  color: ${colors.secondary};
   margin-bottom: 8px;
   font-size: 18px;
 `;

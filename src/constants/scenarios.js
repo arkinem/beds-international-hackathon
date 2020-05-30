@@ -1,7 +1,7 @@
 export default [
   {
-    name: "mars-rover",
-    label: "Mars Rover",
+    name: "mars-rovers",
+    label: "Mars Rovers",
     description: [
       {
         heading: "Intro",

@@ -42,10 +42,13 @@ const Container = styled.div`
 
 const Heading = styled.div`
   position: relative;
+  width: 100%;
   display: flex;
   flex-direction: row;
   justify-content: center;
   margin-bottom: 12px;
+  max-width: 700px;
+  align-self: center;
 `;
 
 const Title = styled.h1`
