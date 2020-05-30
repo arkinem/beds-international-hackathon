@@ -42,6 +42,8 @@ export const registerStudent = async (
   universityId,
   dietaryRequirements
 ) => {
+  let result = { success: false, error: null };
+
   try {
     await studentsCollection.add({
       name,
@@ -50,9 +52,13 @@ export const registerStudent = async (
       universityId,
       dietaryRequirements,
     });
+
+    result.success = true;
   } catch (error) {
-    console.log(error);
+    result.error = error;
   }
+
+  return result;
 };
 
 export const registerUniversity = async (
@@ -62,6 +68,7 @@ export const registerUniversity = async (
   contactNumber
 ) => {
   let result = { success: false, error: null };
+
   try {
     await universitiesCollection.add({
       name,
