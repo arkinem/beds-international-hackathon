@@ -13,7 +13,7 @@ export default [
       },
       {
         heading: "Example",
-        content: ["5 5", "2 1 N", "LMLMLMLMM", "3 3 E", "MMRMMRMRRM"],
+        content: ["5 5", "2 1 N", "LMLMLMLMM", "3 3 E", "MMRMMRMRR"],
       },
       {
         heading: "More info",
