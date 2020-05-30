@@ -1,26 +1,24 @@
 import React from "react";
 import styled from "styled-components";
-import { withRouter } from "react-router-dom";
-import ScenariosNavigation from "../components/Scenarios/ScenariosNavigation";
-import ScenarioViewer from "../components/Scenarios/ScenarioViewer";
+import ScenariosTabs from "../components/Scenarios/ScenariosTabs";
 import PageContainer from "../components/PageContainer";
 import strings from "../constants/strings";
 
-const ScenariosPage = ({ match }) => {
+const ScenariosPage = () => {
   return (
     <PageContainer title={strings.Scenarios}>
       <NavigationContainer>
-        <ScenariosNavigation />
-        <ScenarioViewer />
+        <ScenariosTabs />
       </NavigationContainer>
     </PageContainer>
   );
 };
 
-export default withRouter(ScenariosPage);
+export default ScenariosPage;
 
 const NavigationContainer = styled.div`
   flex: 1;
   display: flex;
   flex-direction: column;
+  align-items: center;
 `;
