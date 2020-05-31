@@ -1,4 +1,4 @@
-import React, { Component, createContext } from "react";
+import React, { createContext } from "react";
 import { fetchUniversities } from "../helpers/firebase";
 
 const initialState = {
@@ -9,7 +9,7 @@ const initialState = {
 
 export const UniversitiesContext = createContext({ ...initialState });
 
-class UniversitiesProvider extends Component {
+class UniversitiesProvider extends React.Component {
   state = {
     ...initialState,
   };
