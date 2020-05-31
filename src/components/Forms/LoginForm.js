@@ -3,8 +3,9 @@ import styled from "styled-components";
 import { Input, Form as AntForm } from "antd";
 import Button from "../Button";
 import Form from "./Form";
+import Spinner from "../Spinner";
 
-const LoginForm = ({ onFinish, setRef, className }) => {
+const LoginForm = ({ onFinish, setRef, className, loading }) => {
   return (
     <Form onFinish={onFinish} setRef={setRef} className={className}>
       <AntForm.Item
@@ -38,7 +39,7 @@ const LoginForm = ({ onFinish, setRef, className }) => {
       </AntForm.Item>
 
       <LoginButton htmlType={"submit"} color={"secondary"}>
-        Login
+        {loading ? <Spinner delay={0} size={"medium"} /> : "Login"}
       </LoginButton>
     </Form>
   );

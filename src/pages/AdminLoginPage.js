@@ -5,7 +5,14 @@ import LoginForm from "../components/Forms/LoginForm";
 import { auth } from "../helpers/firebase";
 
 class AdminLoginPage extends React.Component {
+  state = {
+    loading: false,
+    error: null,
+  };
+
   onFormFinish = async ({ email, password }) => {
+    this.setState({ loading: true });
+
     try {
       const result = await auth.signInWithEmailAndPassword(email, password);
       console.log(result);
@@ -21,6 +28,7 @@ class AdminLoginPage extends React.Component {
           <LoginForm
             setRef={(ref) => (this.form = ref)}
             onFinish={this.onFormFinish}
+            loading={this.state.loading}
           />
         </ColorCard>
       </PageContainer>

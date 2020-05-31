@@ -1,11 +1,10 @@
 import React from "react";
 import styled from "styled-components";
-import { Spin } from "antd";
-import { colors } from "../../../constants/layout";
+import Spinner from "../../Spinner";
 
 const LoadingOverlay = () => (
   <Container>
-    <Spinner size={"large"} delay={700} />
+    <Spinner />
   </Container>
 );
 
@@ -21,10 +20,4 @@ const Container = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-`;
-
-const Spinner = styled(Spin)`
-  .ant-spin-dot-item {
-    background-color: ${colors.secondary};
-  }
 `;
