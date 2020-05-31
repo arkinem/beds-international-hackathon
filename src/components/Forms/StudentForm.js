@@ -91,15 +91,9 @@ class StudentForm extends React.Component {
           <Input allowClear maxLength={600} />
         </AntForm.Item>
 
-        <CenteredItem>
-          <Button
-            htmlType={"submit"}
-            style={{ margin: "auto" }}
-            color={"secondary"}
-          >
-            Submit
-          </Button>
-        </CenteredItem>
+        <SubmitButton htmlType={"submit"} color={"secondary"}>
+          Submit
+        </SubmitButton>
       </Form>
     );
   }
@@ -109,9 +103,7 @@ StudentForm.contextType = UniversitiesContext;
 
 export default StudentForm;
 
-const CenteredItem = styled(AntForm.Item)`
-  .ant-form-item-control-input-content {
-    display: flex;
-    justify-content: center;
-  }
+const SubmitButton = styled(Button)`
+  margin-top: 8px;
+  align-self: center;
 `;

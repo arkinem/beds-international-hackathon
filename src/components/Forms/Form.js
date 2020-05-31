@@ -17,6 +17,9 @@ export default ({ children, onFinish, className, setRef }) => {
 };
 
 const StyledForm = styled(Form)`
+  display: flex;
+  flex-direction: column;
+
   .ant-form-item {
     flex-direction: column;
   }

@@ -62,24 +62,16 @@ const UniversityForm = ({ onFinish, setRef, className }) => {
         <Input allowClear maxLength={14} />
       </AntForm.Item>
 
-      <CenteredItem>
-        <Button
-          htmlType={"submit"}
-          style={{ margin: "auto" }}
-          color={"secondary"}
-        >
-          Submit
-        </Button>
-      </CenteredItem>
+      <SubmitButton htmlType={"submit"} color={"secondary"}>
+        Submit
+      </SubmitButton>
     </Form>
   );
 };
 
 export default UniversityForm;
 
-const CenteredItem = styled(AntForm.Item)`
-  .ant-form-item-control-input-content {
-    display: flex;
-    justify-content: center;
-  }
+const SubmitButton = styled(Button)`
+  margin-top: 8px;
+  align-self: center;
 `;
