@@ -6,16 +6,18 @@ import { IoMdClose } from "react-icons/io";
 import { colors, device } from "../constants/layout";
 import paths from "../navigation/paths";
 
-const PageContainer = ({ title, children, history }) => {
+const PageContainer = ({ title, children, history, hideLeftSection }) => {
   return (
     <Container>
       <Heading>
-        <LeftSection onClick={() => history.push(paths.landing)}>
-          <CloseButton>
-            <IoMdClose color={colors.fontLight} size={40} />
-          </CloseButton>
-          <Label>Close</Label>
-        </LeftSection>
+        {!hideLeftSection && (
+          <LeftSection onClick={() => history.push(paths.landing)}>
+            <CloseButton>
+              <IoMdClose color={colors.fontLight} size={40} />
+            </CloseButton>
+            <Label>Close</Label>
+          </LeftSection>
+        )}
         {title && <Title>{title}</Title>}
       </Heading>
       {children}
