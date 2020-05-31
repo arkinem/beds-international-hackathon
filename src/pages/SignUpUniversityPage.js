@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import { withRouter } from "react-router-dom";
-import { registerUniversity } from "../helpers/firebase";
+import { registerUniversity } from "../helpers/universities";
 import PageContainer from "../components/PageContainer";
 import ColorCard from "../components/ColorCard";
 import UniversityForm from "../components/Forms/UniversityForm";

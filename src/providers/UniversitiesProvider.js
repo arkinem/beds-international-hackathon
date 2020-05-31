@@ -1,5 +1,5 @@
 import React, { createContext } from "react";
-import { fetchUniversities } from "../helpers/firebase";
+import { fetchUniversities } from "../helpers/universities";
 
 const initialState = {
   universities: [],

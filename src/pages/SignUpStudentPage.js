@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import { registerStudent } from "../helpers/firebase";
+import { registerStudent } from "../helpers/students";
 import PageContainer from "../components/PageContainer";
 import ColorCard from "../components/ColorCard";
 import StudentForm from "../components/Forms/StudentForm";
@@ -23,7 +23,7 @@ class SignUpStudentPage extends React.Component {
     dietaryRequirements,
   }) => {
     this.setState({ loading: true });
-    console.log("on submitr");
+    console.log("on submit");
     const { success, error } = await registerStudent(
       name,
       studentNumber,
@@ -31,7 +31,7 @@ class SignUpStudentPage extends React.Component {
       universityId,
       dietaryRequirements
     );
-
+    console.log("success ", success);
     this.setState({ loading: false, success, error });
   };
 
