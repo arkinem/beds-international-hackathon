@@ -30,8 +30,8 @@ const waves = [
 
 export default () => (
   <>
-    {waves.map(({ offset, topPath, bottomPath, color }) => (
-      <ParallaxLayer offset={offset} factor={1.1} speed={1}>
+    {waves.map(({ offset, topPath, bottomPath, color }, index) => (
+      <ParallaxLayer offset={offset} factor={1.1} speed={1} key={index}>
         <Container>
           <svg viewBox="0 0 1440 320">
             <Path fill={color} d={topPath} />

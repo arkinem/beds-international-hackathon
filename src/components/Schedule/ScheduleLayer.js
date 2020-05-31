@@ -14,12 +14,12 @@ const ScheduleLayer = () => (
     <MakContainer title={strings.Schedule}>
       <ContentContainer>
         <Title>{schedule.startDate.format(dateFormat)}</Title>
-        {schedule.saturday.map((item) => (
-          <ScheduleItem {...item} />
+        {schedule.saturday.map((item, key) => (
+          <ScheduleItem {...item} key={key} />
         ))}
         <Title marginTop={8}>{schedule.endDate.format(dateFormat)}</Title>
-        {schedule.sunday.map((item) => (
-          <ScheduleItem {...item} />
+        {schedule.sunday.map((item, key) => (
+          <ScheduleItem {...item} key={key} />
         ))}
         {/* All as Google Hangouts call! Links in emails for registered. */}
       </ContentContainer>
