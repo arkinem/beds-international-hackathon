@@ -1,28 +1,27 @@
 import { universitiesCollection } from "./firebase";
 
-export const fetchUniversities = async () => {
+export const fetchUniversities = async (includeUnconfirmed) => {
   let result = {
     error: null,
     universities: [],
   };
 
   try {
-    const universitiesSnapshot = await universitiesCollection
-      .where("isConfirmed", "==", true)
-      .get();
+    const universitiesSnapshot = includeUnconfirmed
+      ? await universitiesCollection.get()
+      : await universitiesCollection.where("isConfirmed", "==", true).get();
 
     if (!universitiesSnapshot.empty) {
       universitiesSnapshot.forEach((doc) => {
         result.universities.push({
           id: doc.id,
-          name: doc.data().name,
+          ...doc.data(),
         });
       });
     }
   } catch (error) {
     result.error = error;
   }
-  console.log(result);
   return result;
 };
 
