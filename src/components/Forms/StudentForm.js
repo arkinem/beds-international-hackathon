@@ -76,7 +76,9 @@ class StudentForm extends React.Component {
             {loading
               ? "Loading"
               : universities.map(({ id, name }) => (
-                  <Select.Option value={id}>{name}</Select.Option>
+                  <Select.Option value={id} key={id}>
+                    {name}
+                  </Select.Option>
                 ))}
           </Select>
         </AntForm.Item>
