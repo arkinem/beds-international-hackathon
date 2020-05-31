@@ -3,7 +3,7 @@ import { Route, Redirect } from "react-router-dom";
 import paths from "./paths";
 import { UserContext } from "../providers/UserProvider";
 
-class PrivateRoute extends React.Component {
+class PublicRoute extends React.Component {
   render() {
     const { children, ...rest } = this.props;
     const user = this.context;
@@ -13,14 +13,14 @@ class PrivateRoute extends React.Component {
         {...rest}
         render={({ location }) =>
           user ? (
-            children
-          ) : (
             <Redirect
               to={{
-                pathname: paths.adminLogin,
+                pathname: paths.adminDashboard,
                 state: { from: location },
               }}
             />
+          ) : (
+            children
           )
         }
       />
@@ -28,6 +28,6 @@ class PrivateRoute extends React.Component {
   }
 }
 
-PrivateRoute.contextType = UserContext;
+PublicRoute.contextType = UserContext;
 
-export default PrivateRoute;
+export default PublicRoute;

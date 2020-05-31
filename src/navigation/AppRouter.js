@@ -3,9 +3,9 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import { createBrowserHistory } from "history";
 // import { AnimatedSwitch } from "react-router-transition";
 // import styled from "styled-components";
+import PublicRoute from "./PublicRoute";
 import PrivateRoute from "./PrivateRoute";
 import paths from "./paths";
-import LoginPage from "../pages/LoginPage";
 import LandingPage from "../pages/LandingPage";
 import ScenariosPage from "../pages/ScenariosPage";
 import SignUpPage from "../pages/SignUpPage";
@@ -28,9 +28,6 @@ export default function AppRouter() {
         <Route path={paths.landing} exact>
           <LandingPage />
         </Route>
-        <Route path={paths.login}>
-          <LoginPage />
-        </Route>
         <Route path={`${paths.scenarios}/:id?`}>
           <ScenariosPage />
         </Route>
@@ -43,9 +40,9 @@ export default function AppRouter() {
         <Route path={paths.signUpUniversity}>
           <SignUpUniversityPage />
         </Route>
-        <Route path={paths.adminLogin} exact>
+        <PublicRoute path={paths.adminLogin} exact>
           <AdminLoginPage />
-        </Route>
+        </PublicRoute>
         <PrivateRoute path={paths.adminDashboard}>
           <AdminDashboardPage />
         </PrivateRoute>
