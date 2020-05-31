@@ -39,8 +39,6 @@ const Navigation = styled(Tabs)`
   width: 100%;
   max-width: 700px;
   min-width: 320px;
-  .ant-tabs {
-  }
 
   .ant-tabs-nav-scroll {
     display: flex;

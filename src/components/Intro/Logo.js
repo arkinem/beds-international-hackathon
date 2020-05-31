@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import { device, colors } from "../../constants/layout";
+import { colors } from "../../constants/layout";
 import { Spring } from "react-spring/renderprops";
 
 class Logo extends React.Component {
@@ -10,13 +10,7 @@ class Logo extends React.Component {
 
   render() {
     const { comeBack } = this.state;
-    console.log(
-      comeBack,
-      "from",
-      comeBack ? 0 : 650,
-      "to",
-      comeBack ? -650 : 0
-    );
+
     return (
       <Svg viewBox="0 0 350 283">
         <Spring
@@ -93,7 +87,6 @@ const Svg = styled.svg`
   height: 80vh;
   z-index: -1;
   opacity: 0.7;
-  /* width="350" height="283" */
 `;
 
 const Path = styled.path`
