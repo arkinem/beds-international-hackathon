@@ -14,8 +14,8 @@ export default ({ children, ...rest }) => {
         ) : (
           <Redirect
             to={{
-              pathname: "/login",
-              state: { from: location }
+              pathname: "/admin",
+              state: { from: location },
             }}
           />
         )
