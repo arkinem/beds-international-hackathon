@@ -23,12 +23,12 @@ class StudentsTable extends React.Component {
       title: "University",
       dataIndex: "universityId",
       key: "universityId",
-      // render: (universityId) => {
-      //   const university = this.props.universities.find(
-      //     (u) => u.id === universityId
-      //   );
-      //   return university ? university.name : "-";
-      // },
+      render: (universityId) => {
+        const university = this.props.universities.find(
+          (u) => u.id === universityId
+        );
+        return university ? university.name : "-";
+      },
     },
     {
       title: "Dietary Requirements",
