@@ -2,10 +2,10 @@ import React from "react";
 import styled from "styled-components";
 import { FaExclamationCircle } from "react-icons/fa";
 import { withRouter } from "react-router-dom";
-import Button from "../Button";
-import paths from "../../navigation/paths";
-import { colors } from "../../constants/layout";
-import { fadeIn } from "../../constants/keyframes";
+import Button from "../../Button";
+import paths from "../../../navigation/paths";
+import { colors } from "../../../constants/layout";
+import { fadeIn } from "../../../constants/keyframes";
 
 const ErrorOverlay = ({ history }) => (
   <Container>

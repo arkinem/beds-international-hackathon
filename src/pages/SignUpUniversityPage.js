@@ -5,9 +5,9 @@ import { registerUniversity } from "../helpers/firebase";
 import PageContainer from "../components/PageContainer";
 import ColorCard from "../components/ColorCard";
 import UniversityForm from "../components/Forms/UniversityForm";
-import SuccessOverlay from "../components/Forms/SuccessOverlay";
-import LoadingOverlay from "../components/Forms/LoadingOverlay";
-import ErrorOverlay from "../components/Forms/ErrorOverlay";
+import SuccessOverlay from "../components/Forms/Overlays/SuccessOverlay";
+import LoadingOverlay from "../components/Forms/Overlays/LoadingOverlay";
+import ErrorOverlay from "../components/Forms/Overlays/ErrorOverlay";
 
 class SignUpUniversityPage extends React.Component {
   state = {
