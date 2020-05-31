@@ -4,14 +4,15 @@ import { createBrowserHistory } from "history";
 // import { AnimatedSwitch } from "react-router-transition";
 // import styled from "styled-components";
 import PrivateRoute from "./PrivateRoute";
+import paths from "./paths";
 import LoginPage from "../pages/LoginPage";
 import LandingPage from "../pages/LandingPage";
-import DashboadPage from "../pages/DashboardPage";
-import paths from "./paths";
 import ScenariosPage from "../pages/ScenariosPage";
 import SignUpPage from "../pages/SignUpPage";
 import SignUpStudentPage from "../pages/SignUpStudentPage";
 import SignUpUniversityPage from "../pages/SignUpUniversityPage";
+import AdminLoginPage from "../pages/AdminLoginPage";
+import AdminDashboardPage from "../pages/AdminDashboardPage";
 
 const history = createBrowserHistory();
 
@@ -42,8 +43,11 @@ export default function AppRouter() {
         <Route path={paths.signUpUniversity}>
           <SignUpUniversityPage />
         </Route>
-        <PrivateRoute path={paths.dashboard}>
-          <DashboadPage />
+        <Route path={paths.adminLogin} exact>
+          <AdminLoginPage />
+        </Route>
+        <PrivateRoute path={paths.adminDashboard}>
+          <AdminDashboardPage />
         </PrivateRoute>
       </Switch>
     </Router>
