@@ -19,17 +19,18 @@ const MakContainer = ({ title, children }) => (
             ry={cornerRadius}
             width={"100%"}
           />
-          <WindowTopBar
-            d={`M0,${windowTopBarHeight}
-       v-${windowTopBarHeight - cornerRadius}
-       a${cornerRadius},${cornerRadius} 0 0 1 ${cornerRadius},-${cornerRadius}
-       h${width - cornerRadius * 2 + contentHorizontalPadding * 2}
-       a${cornerRadius},${cornerRadius} 0 0 1 ${cornerRadius},${cornerRadius}
-       v${windowTopBarHeight - cornerRadius}
-       z
-    `}
-          />
-
+          {width && (
+            <WindowTopBar
+              d={`M0,${windowTopBarHeight}
+          v-${windowTopBarHeight - cornerRadius}
+          a${cornerRadius},${cornerRadius} 0 0 1 ${cornerRadius},-${cornerRadius}
+          h${width - cornerRadius * 2 + contentHorizontalPadding * 2}
+          a${cornerRadius},${cornerRadius} 0 0 1 ${cornerRadius},${cornerRadius}
+          v${windowTopBarHeight - cornerRadius}
+          z
+          `}
+            />
+          )}
           <Dot cx="15" cy="15" r="7" color={colors.mak.leftDot} />
           <Dot cx="35" cy="15" r="7" color={colors.mak.middleDot} />
           <Dot cx="55" cy="15" r="7" color={colors.mak.rightDot} />
