@@ -5,13 +5,16 @@ import "./App.css";
 import AppRouter from "./navigation/AppRouter";
 import { GlobalStyle } from "./constants/layout";
 import UniversitiesProvider from "./providers/UniversitiesProvider";
+import UserProvider from "./providers/UserProvider";
 
 const app = (
   <>
     <GlobalStyle />
-    <UniversitiesProvider>
-      <AppRouter />
-    </UniversitiesProvider>
+    <UserProvider>
+      <UniversitiesProvider>
+        <AppRouter />
+      </UniversitiesProvider>
+    </UserProvider>
   </>
 );
 
