@@ -1,6 +1,9 @@
 import React from "react";
 import Table from "../Table";
+import { MdDeleteForever } from "react-icons/md";
 import { UniversitiesAdminContext } from "../../providers/UniversitiesAdminProvider";
+import styled from "styled-components";
+import { colors } from "../../constants/layout";
 
 class UniversitiesTable extends React.Component {
   columns = [
@@ -31,9 +34,12 @@ class UniversitiesTable extends React.Component {
         return isConfirmed ? (
           "Yes"
         ) : (
-          <button onClick={() => this.context.confirmUniversity(id)}>
-            Confirm
-          </button>
+          <>
+            <span>No</span>
+            <ConfirmButton onClick={() => this.context.confirmUniversity(id)}>
+              Confirm
+            </ConfirmButton>
+          </>
         );
       },
     },
@@ -42,9 +48,10 @@ class UniversitiesTable extends React.Component {
       key: "delete",
       render: ({ id }) => {
         return (
-          <button onClick={() => this.context.deleteUniversity(id)}>
-            delete
-          </button>
+          <MdDeleteForever
+            size={22}
+            onClick={() => this.context.deleteUniversity(id)}
+          />
         );
       },
     },
@@ -60,3 +67,14 @@ class UniversitiesTable extends React.Component {
 UniversitiesTable.contextType = UniversitiesAdminContext;
 
 export default UniversitiesTable;
+
+const ConfirmButton = styled.button`
+  background: transparent;
+  border: 0;
+  padding: 0 3px 0 12px;
+  color: ${colors.secondary};
+
+  :hover {
+    color: ${colors.secondary + "AA"};
+  }
+`;

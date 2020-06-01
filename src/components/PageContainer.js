@@ -11,6 +11,7 @@ const PageContainer = ({
   children,
   history,
   hideLeftSection,
+  rightSection,
   center,
 }) => {
   return (
@@ -25,6 +26,7 @@ const PageContainer = ({
           </LeftSection>
         )}
         {title && <Title>{title}</Title>}
+        {rightSection && <RightSection>{rightSection}</RightSection>}
       </Heading>
       {children}
     </Container>
@@ -70,6 +72,14 @@ const Title = styled.h1`
 const LeftSection = styled.div`
   position: absolute;
   left: 0;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+`;
+
+const RightSection = styled.div`
+  position: absolute;
+  right: 0;
   display: flex;
   flex-direction: row;
   align-items: center;
