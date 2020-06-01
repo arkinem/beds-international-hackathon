@@ -1,5 +1,5 @@
 import React from "react";
-import { Table } from "antd";
+import Table from "../Table";
 import { StudentsContext } from "../../providers/StudentsProvider";
 
 class StudentsTable extends React.Component {
@@ -41,7 +41,7 @@ class StudentsTable extends React.Component {
     const { students, loading, error } = this.context;
     const data = students.map((s) => ({ key: s.id, ...s }));
 
-    return <Table size={"small"} columns={this.columns} dataSource={data} />;
+    return <Table loading={loading} columns={this.columns} data={data} />;
   }
 }
 

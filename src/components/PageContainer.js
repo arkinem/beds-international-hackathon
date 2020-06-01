@@ -6,9 +6,15 @@ import { IoMdClose } from "react-icons/io";
 import { colors, device } from "../constants/layout";
 import paths from "../navigation/paths";
 
-const PageContainer = ({ title, children, history, hideLeftSection }) => {
+const PageContainer = ({
+  title,
+  children,
+  history,
+  hideLeftSection,
+  center,
+}) => {
   return (
-    <Container>
+    <Container center={center}>
       <Heading>
         {!hideLeftSection && (
           <LeftSection onClick={() => history.push(paths.landing)}>
@@ -33,6 +39,7 @@ const Container = styled.div`
   background-size: cover !important;
   display: flex;
   flex-direction: column;
+  ${({ center }) => center && `align-items: center;`}
 
   padding: 22px;
   min-height: 100vh;

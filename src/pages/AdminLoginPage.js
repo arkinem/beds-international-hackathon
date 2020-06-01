@@ -23,7 +23,7 @@ class AdminLoginPage extends React.Component {
 
   render() {
     return (
-      <PageContainer title={"Admin"} hideLeftSection>
+      <PageContainer title={"Admin"} center hideLeftSection>
         <ColorCard maxWidth={400}>
           <LoginForm
             setRef={(ref) => (this.form = ref)}

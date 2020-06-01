@@ -7,7 +7,7 @@ import AdminTabs from "../components/Admin/AdminTabs";
 class AdminDashboardPage extends React.Component {
   render() {
     return (
-      <PageContainer title={"Admin"} hideLeftSection>
+      <PageContainer title={"Admin"} center hideLeftSection>
         <AdminTabs />
         <Button onClick={() => auth.signOut()}>logout</Button>
       </PageContainer>

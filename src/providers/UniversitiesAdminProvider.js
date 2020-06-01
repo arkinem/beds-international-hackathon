@@ -1,5 +1,9 @@
 import React, { createContext } from "react";
-import { fetchUniversities } from "../helpers/universities";
+import {
+  fetchUniversities,
+  deleteUniversity,
+  confirmUniversity,
+} from "../helpers/universities";
 
 const initialState = {
   universities: [],
@@ -7,7 +11,11 @@ const initialState = {
   error: null,
 };
 
-export const UniversitiesAdminContext = createContext({ ...initialState });
+export const UniversitiesAdminContext = createContext({
+  ...initialState,
+  deleteUniversity: () => null,
+  confirmUniversity: () => null,
+});
 
 class UniversitiesAdminProvider extends React.Component {
   state = {
@@ -15,15 +23,33 @@ class UniversitiesAdminProvider extends React.Component {
   };
 
   componentDidMount = async () => {
+    this.fetchUniversities();
+  };
+
+  deleteUniversity = async (id) => {
+    await this.fetchUniversities(async () => await deleteUniversity(id));
+  };
+
+  confirmUniversity = async (id) => {
+    await this.fetchUniversities(async () => await confirmUniversity(id));
+  };
+
+  fetchUniversities = async (prefetchAction) => {
     this.setState({ loading: true });
+    if (prefetchAction) await prefetchAction();
     const { error, universities } = await fetchUniversities(true);
-    console.log(error, universities);
     this.setState({ loading: false, universities, error });
   };
 
   render() {
     return (
-      <UniversitiesAdminContext.Provider value={this.state}>
+      <UniversitiesAdminContext.Provider
+        value={{
+          ...this.state,
+          deleteUniversity: this.deleteUniversity,
+          confirmUniversity: this.confirmUniversity,
+        }}
+      >
         {this.props.children}
       </UniversitiesAdminContext.Provider>
     );

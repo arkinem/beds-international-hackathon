@@ -49,3 +49,29 @@ export const registerUniversity = async (
 
   return result;
 };
+
+export const deleteUniversity = async (id) => {
+  let result = { success: false, error: null };
+
+  try {
+    await universitiesCollection.doc(id).delete();
+    result.success = true;
+  } catch (error) {
+    result.error = error;
+  }
+
+  return result;
+};
+
+export const confirmUniversity = async (id) => {
+  let result = { success: false, error: null };
+
+  try {
+    await universitiesCollection.doc(id).update("isConfirmed", true);
+    result.success = true;
+  } catch (error) {
+    result.error = error;
+  }
+
+  return result;
+};

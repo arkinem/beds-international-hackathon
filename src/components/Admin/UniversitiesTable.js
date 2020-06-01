@@ -1,42 +1,61 @@
 import React from "react";
-import { Table } from "antd";
+import Table from "../Table";
 import { UniversitiesAdminContext } from "../../providers/UniversitiesAdminProvider";
-
-const columns = [
-  {
-    title: "Name",
-    dataIndex: "name",
-    key: "name",
-    // render: (text) => <a>{text}</a>,
-  },
-  {
-    title: "Contact Name",
-    dataIndex: "contactName",
-    key: "contactName",
-  },
-  {
-    title: "Contact Email",
-    dataIndex: "contactEmail",
-    key: "contactEmail",
-  },
-  {
-    title: "Contact Number",
-    dataIndex: "contactNumber",
-    key: "contactNumber",
-  },
-  {
-    title: "Is Confirmed?",
-    dataIndex: "isConfirmed",
-    key: "isConfirmed",
-  },
-];
+import { deleteUniversity } from "../../helpers/universities";
 
 class UniversitiesTable extends React.Component {
+  columns = [
+    {
+      title: "Name",
+      dataIndex: "name",
+      key: "name",
+      // render: (text) => <a>{text}</a>,
+    },
+    {
+      title: "Contact Name",
+      dataIndex: "contactName",
+      key: "contactName",
+    },
+    {
+      title: "Contact Email",
+      dataIndex: "contactEmail",
+      key: "contactEmail",
+    },
+    {
+      title: "Contact Number",
+      dataIndex: "contactNumber",
+      key: "contactNumber",
+    },
+    {
+      title: "Is Confirmed?",
+      key: "isConfirmed",
+      render: ({ id, isConfirmed }) => {
+        return isConfirmed ? (
+          "Yes"
+        ) : (
+          <button onClick={() => this.context.confirmUniversity(id)}>
+            Confirm
+          </button>
+        );
+      },
+    },
+    {
+      title: "Delete",
+      key: "delete",
+      render: ({ id }) => {
+        return (
+          <button onClick={() => this.context.deleteUniversity(id)}>
+            delete
+          </button>
+        );
+      },
+    },
+  ];
+
   render() {
     const { universities, loading, error } = this.context;
     const data = universities.map((u) => ({ key: u.id, ...u }));
-
-    return <Table size={"small"} columns={columns} dataSource={data} />;
+    return <Table loading={loading} columns={this.columns} data={data} />;
   }
 }
 
