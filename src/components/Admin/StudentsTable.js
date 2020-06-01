@@ -38,7 +38,7 @@ class StudentsTable extends React.Component {
   ];
 
   render() {
-    const { students, loading, error } = this.context;
+    const { students, loading } = this.context;
     const data = students.map((s) => ({ key: s.id, ...s }));
 
     return <Table loading={loading} columns={this.columns} data={data} />;

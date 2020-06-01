@@ -1,7 +1,6 @@
 import React from "react";
 import Table from "../Table";
 import { UniversitiesAdminContext } from "../../providers/UniversitiesAdminProvider";
-import { deleteUniversity } from "../../helpers/universities";
 
 class UniversitiesTable extends React.Component {
   columns = [
@@ -9,7 +8,6 @@ class UniversitiesTable extends React.Component {
       title: "Name",
       dataIndex: "name",
       key: "name",
-      // render: (text) => <a>{text}</a>,
     },
     {
       title: "Contact Name",
@@ -53,7 +51,7 @@ class UniversitiesTable extends React.Component {
   ];
 
   render() {
-    const { universities, loading, error } = this.context;
+    const { universities, loading } = this.context;
     const data = universities.map((u) => ({ key: u.id, ...u }));
     return <Table loading={loading} columns={this.columns} data={data} />;
   }
